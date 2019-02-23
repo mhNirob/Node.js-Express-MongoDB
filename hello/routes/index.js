@@ -14,12 +14,22 @@ router.get('/helloworld', function(req, res) {
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {
     var db = req.db;
-    var collection = db.get('usercollection');
+    console.log(db)
+    collection = db.get('customers');
     collection.find({},{},function(e,docs){
         res.render('userlist', {
-            "userlist" : docs
+            "customers" : docs
             , title: 'Hello, World!'});
     });
+
 });	
+
+/* Get Medlife Page. */
+
+router.get('/medlife', function(req,res){
+	res.render('medlife',{});
+});
+
+
 
 module.exports = router;

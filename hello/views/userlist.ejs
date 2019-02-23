@@ -9,8 +9,8 @@
     <ul>
       <%
         var list = '';
-        for (i = 1; i < userlist.length; i++) {
-          list += '<li><a href="mailto:' + userlist[i].email + '">' + userlist[i].username + '</a></li>';
+        for (i = 0; i < customers.length; i++) {
+          list += '<li><a href="mailto:' + customers[i].name + '">' + customers[i].address + '</a></li>';
         }
         return list;
       %>

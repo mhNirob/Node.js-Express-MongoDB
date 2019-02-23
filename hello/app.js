@@ -10,7 +10,9 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 var monk = require('monk');
-var db = monk('localhost:27017/hello');
+//var db = monk('localhost:27017/hello');
+var db = monk('mongodb://localhost:27017/mydb');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 // Make our db accessible to our router
 app.use(function(req,res,next){

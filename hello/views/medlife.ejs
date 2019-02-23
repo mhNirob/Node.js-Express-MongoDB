@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Medlife</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <!cdn>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!conecting to custom googlefont>
+
+    <style> <!--cssfile-->
+        body{
+            background-color:white;
+            
+        }        
+        <!--forheart-->
+body{
+  padding:100px 0;
+  background-color:white;
+}
+
+#heart {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    animation: heartbeat 1s infinite;
+    margin:0 auto;
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 100px;
+    top: 0;
+    width: 100px;
+    height: 150px;
+    background:red;
+    -moz-border-radius: 100px 100px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .80 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .80 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .80 );
+  }
+  100%
+  {
+    transform: scale( .80 );
+  }
+}
+        
+        <!---forquiz--->
+        
+      body {
+	font-family: 'montserrat', sans-serif;
+}
+
+#quiz {
+	margin-left: 10px;
+	background:antiquewhite;
+	padding: 10px 20px 10px 20px;
+	width: 400px;
+	border-radius: 20px;
+	float: left;
+
+}
+
+input {
+	margin-bottom: 20px;
+	display: block;
+}
+
+#textbox {
+	height: 30px;
+	font-size: 18px;
+	border-radius: 5px;
+	border: none;
+	padding-left: 5px;
+}
+
+#button {
+	background: red;
+    position:absolute;
+    text-align: center;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	font-size: 16px;
+	transition-duration: .5s;
+	margin-top: 20px;
+}
+
+
+
+#button:hover {
+	background: white;
+	border: 1px solid red;
+	color: black;
+	cursor: pointer;
+}
+
+
+#mc {
+	display: inline;
+}  
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.questions {
+  display: none;
+}
+
+button {
+  background-color: red;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+} 
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+    
+</style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 style="text-align:center">Med-Life</h1>
+        <h2 style="text-align: center">Introduction about medlife</h2>
+
+        <div class="row">
+            <div class="col-sm-3" style="background-color:white;">
+                <br><br>
+                <div id="heart"></div>
+                <br><br>
+                <p style="text-align:center">Click Me! </p>
+            </div>
+
+            <div class="col-sm-7" style="background-color:white;">
+                <br><br>
+                 <h3>Scenario 1: Sunburn</h3>
+                <p style="text-align:left">It is Summer! Sally and her friends are going to beach. Sally forgot her sunscreem.She has a very sensative skin.Sally is worried, she might get sunburn!  </p>
+                
+                <!--medlife quiz-->
+                <br><br>
+            
+                <form id="quiz" name="quiz">
+
+                    <div class="questions">
+                      <p>What did Sally forgot in the beach?</p>
+                    <input type="radio" id="mc" name="question2" value="Ice Cream"> Ice Cream<br>
+                    <input type="radio" id="mc" name="question2" value="Sunscreem"> Sunscreem<br>
+                    <br><br>
+                    </div>
+
+                    <div class="questions">
+                      <p>Why Sally is worried?</p>
+
+                    <input type="radio" id="mc" name="question3" value="sunburn"> She might get sunburn<br>
+                    <input type="radio" id="mc" name="question3" value="swim"> She doesnt know how to swim<br>
+                    <br><br>
+                    </div>
+
+                    <div class="questions">
+                      <p>What did Sally forgot in the beach?</p>
+                    <input type="radio" id="mc" name="question2" value="Ice Cream"> Ice Cream<br>
+                    <input type="radio" id="mc" name="question2" value="Sunscreem"> Sunscreem<br>
+                    <br><br>
+                    </div>
+
+                    <div class="questions">
+                      <p>Why Sally is worried?</p>
+
+                    <input type="radio" id="mc" name="question3" value="sunburn"> She might get sunburn<br>
+                    <input type="radio" id="mc" name="question3" value="swim"> She doesnt know how to swim<br>
+                    <br><br>
+                    </div>
+                    <!--
+                    <div class="row">
+                      <div class="column">
+                        <input id="button" type="button" value="Previous" onclick="nextPrev(-1)">
+                      </div>
+                      <div class="column">
+                        <input id="button" type="button" value="Next" onclick="nextPrev(1)">
+                      </div>
+                    </div>
+                    -->
+                      <div style="overflow:auto;">
+                        <div style="float:right;">
+                          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        </div>
+                      </div>
+
+                      <div style="text-align:center;margin-top:40px;">
+                          <span class="step"></span>
+                          <span class="step"></span>
+                          <span class="step"></span>
+                          <span class="step"></span>
+                      </div>
+                </form>
+            </div>
+                     
+            <div class="col-sm-2" style="background-color:white;">
+                <img src="images/icon2.PNG" class="img-rounded" alt="icon2">
+            </div>
+
+        </div>
+    </div>
+
+
+<script>
+
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("questions");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("questions");
+  // Exit the function if any field in the current tab is invalid:
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+
+</script>
+
+</body>
+
+</html>
