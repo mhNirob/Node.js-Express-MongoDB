@@ -13,7 +13,6 @@ var monk = require('monk');
 //var db = monk('localhost:27017/hello');
 var db = monk('mongodb://localhost:27017/mydb');
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

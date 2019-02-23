@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -27,7 +28,14 @@ router.get('/userlist', function(req, res) {
 /* Get Medlife Page. */
 
 router.get('/medlife', function(req,res){
-	res.render('medlife',{});
+	var db = req.db;
+    console.log(db)
+    collection = db.get('customers');
+    collection.find({},{},function(e,docs){
+        res.render('medlife', {
+            "customers" : docs
+            , title: 'Hello, World!'});
+    });
 });
 
 

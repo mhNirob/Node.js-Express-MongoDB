@@ -209,7 +209,7 @@ button:hover {
         <div class="row">
             <div class="col-sm-3" style="background-color:white;">
                 <br><br>
-                <div id="heart"></div>
+                <div id="heart" onclick="heartPopUp()"></div>
                 <br><br>
                 <p style="text-align:center">Click Me! </p>
             </div>
@@ -332,6 +332,14 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+function heartPopUp() {
+  var tval = "<%= customers[0].name %>"
+  console.log(tval)
+  //str = customers[0].name
+  window.alert(tval);
+}
+
 
 </script>
 
